@@ -9,7 +9,9 @@ export const API = axios.create({
 
 API.interceptors.request.use(
   (config) => {
-    config.headers.Authorization = `token ${TOKEN}`;
+    if (TOKEN) {
+      config.headers.Authorization = `token ${TOKEN}`
+    }
     return config;
   },
   (error) => {
