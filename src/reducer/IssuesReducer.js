@@ -17,7 +17,7 @@ export const reducer = (state = initialState, action) => {
     case IssueAction.ISSUE_LIST_SUCCESS:
       return {
         ...state,
-        isLoading: true,
+        isLoading: false,
         isUpdated: false,
         issueList: [...action.data],
       };
@@ -33,7 +33,8 @@ export const reducer = (state = initialState, action) => {
     case IssueAction.ISSUE_LIST_FAILURE:
       return {
         ...state,
-        error: action.data.error,
+        isLoading: false,
+        isError: action.data.error,
       };
     default:
       return state;
