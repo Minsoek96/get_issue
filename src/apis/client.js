@@ -7,6 +7,7 @@ export const API = axios.create({
   },
 });
 
+//git 커밋시 Token키가 유출될 상황을 고려하여 토큰의 유무 판단 - 없을시 60회 제한
 API.interceptors.request.use(
   (config) => {
     if (TOKEN) {
