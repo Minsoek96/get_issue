@@ -59,15 +59,12 @@ const IssuesList = () => {
   if (isError) {
     return <p>에러확인</p>;
   }
-
-  if (isLoading) {
-    return <p>로딩중 ...</p>;
-  }
-
+  
   return (
     <div>
       <h2>이슈 페이지</h2>
       <div>{issueList.map(renderIssue)}</div>
+      {isLoading && <p> 로딩중 ...</p>}
     </div>
   );
 };
