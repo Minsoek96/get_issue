@@ -19,7 +19,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isUpdated: false,
-        issueList: [...action.data],
+        issueList: [...state.issueList, ...action.data],
       };
     case IssueAction.ISSUE_LIST_REQUEST:
       return {
