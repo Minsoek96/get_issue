@@ -1,14 +1,19 @@
-import { useState, useEffect } from "react";
-import { getIssues, getIssuesDetail } from "./apis/issues";
+import { GlobalStyle } from "./styles/globalStyles";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import Issues from "./pages/Issues";
+import IssuesDetail from "./pages/IssuesDetail";
 const App = () => {
-  useEffect(() => {
-    getIssues().then((res) => console.log(res));
-    getIssuesDetail(5).then((res) => console.log(res));
-  });
   return (
-    <>
-      <h2>dd</h2>
-    </>
+    <Router>
+      <GlobalStyle />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Issues />} />
+          <Route path="/:id" element={<IssuesDetail />}></Route>
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 export default App;
