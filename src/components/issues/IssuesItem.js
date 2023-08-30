@@ -1,8 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
+import { Link } from "react-router-dom";
 
-const IssuesItem = (issue) => {
+
+const IssuesItem = forwardRef((issue, ref) => {
   return (
-    <div>
+    <Link to={`/${issue.number}`} ref={ref}>
       <div>
         <p>
           #{issue.number} {issue.title}
@@ -11,12 +13,12 @@ const IssuesItem = (issue) => {
           {issue.user.login} , {issue.created_at}
         </p>
         <p>{issue.comments}</p>
-        <p>{issue.id}</p>
+        <p>{issue.state}</p>
         <br />
         <br />
       </div>
-    </div>
+    </Link>
   );
-};
+});
 
 export default IssuesItem;
