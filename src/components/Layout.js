@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { V } from "../styles/variables";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -8,11 +9,11 @@ const LayoutContainer = styled.div`
 
 const ContentWrapper = styled.main`
   flex: 1;
-  padding: 20px;
+  padding: ${V.md_padding};
 `;
 
 const Header = styled.h2`
-  font-size: 55px;
+  font-size: ${V.font_size_xl};
   text-align: center;
 `;
 

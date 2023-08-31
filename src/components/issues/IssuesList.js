@@ -8,7 +8,6 @@ import {
 } from "../../context/IssuesContext";
 import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 import Spinner from "../Spinner";
-import ErrorScreen from "../ErrorScreen";
 import { styled } from "styled-components";
 
 const IssuesList = () => {
@@ -17,7 +16,7 @@ const IssuesList = () => {
   const [page, setPage] = useState(1);
   const { lastItemRef } = useInfiniteScroll(
     () => setPage((curPage) => curPage + 1),
-    0.9
+    1
   );
 
   useEffect(() => {
@@ -53,6 +52,6 @@ export default IssuesList;
 const IssueListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center ;
+  align-items: center;
   justify-content: center;
 `;

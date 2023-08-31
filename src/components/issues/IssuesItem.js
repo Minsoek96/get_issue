@@ -2,6 +2,7 @@ import React, { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Issue } from "../../styles/globalStyles";
+import { V } from "../../styles/variables";
 
 const IssuesItem = forwardRef((issue, ref) => {
   return (
@@ -28,7 +29,8 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
+  max-width: ${V.lg_width};
+  padding: ${V.md_padding};
   border-bottom: 1px solid #eee;
   text-decoration: none;
   color: inherit;

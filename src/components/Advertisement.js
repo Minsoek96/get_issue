@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { V } from "../styles/variables";
 
 const AdvertisementWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 70px;
+  margin: ${V.lg_margin};
   cursor: pointer;
 `;
 
 const AdvertisementImage = styled.img`
-  width: 110px;
+  width: ${V.sm_width};
   margin: 0 5px;
 `;
 

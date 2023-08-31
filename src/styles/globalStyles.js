@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { V } from "./variables";
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -19,10 +20,10 @@ export const Wrapper = styled.div`
 
 export const Issue = {
   Container: styled.div`
-    padding: 16px;
+    padding: ${V.md_padding};
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
+    margin-bottom: ${V.md_margin};
     background-color: #ffffff;
   `,
   Wrapper: styled.div`
@@ -30,20 +31,20 @@ export const Issue = {
     flex-direction: column;
   `,
   Title: styled.p`
-    font-size: 18px;
+    font-size: ${V.font_size_md};
     font-weight: bold;
     margin-bottom: 8px;
   `,
   User: styled.p`
-    font-size: 14px;
+    font-size: ${V.font_size_md};
     margin-bottom: 4px;
   `,
   CommentsCount: styled.p`
-    font-size: 20px;
+    font-size: ${V.font_size_lg};
     margin-bottom: 4px;
   `,
   State: styled.p`
-    font-size: 14px;
+    font-size: ${V.font_size_md};
     font-weight: bold;
     color: ${(props) => (props.children === "open" ? "#51af67fa" : "red")};
   `,

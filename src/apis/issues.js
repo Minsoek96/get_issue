@@ -29,6 +29,11 @@ export const getIssues = async (
   }
 };
 
+
+export const getIssuesDetail = (targetId) => {
+  return API(`${ISSUES}/${targetId}`);
+};
+
 // export const getIssuesDetail2 = async (dispatch, targetId) => {
 //   try {
 //     console.log('동작')
@@ -49,7 +54,3 @@ export const getIssues = async (
 //     });
 //   }
 // };
-
-export const getIssuesDetail = (targetId) => {
-  return API(`${ISSUES}/${targetId}`);
-};
