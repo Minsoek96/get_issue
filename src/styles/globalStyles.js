@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -17,17 +17,34 @@ export const Wrapper = styled.div`
   height: 100vh;
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Input = styled.input`
-  height: 22px;
-  width: 250px;
-  padding: 15px 32px;
-  background-color: #e8f0fe;
-  border-radius: 8px;
-  border: none;
-  margin: 4px 2px;
-`;
+export const Issue = {
+  Container: styled.div`
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    background-color: #ffffff;
+  `,
+  Wrapper: styled.div`
+    display: flex;
+    flex-direction: column;
+  `,
+  Title: styled.p`
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  `,
+  User: styled.p`
+    font-size: 14px;
+    margin-bottom: 4px;
+  `,
+  CommentsCount: styled.p`
+    font-size: 20px;
+    margin-bottom: 4px;
+  `,
+  State: styled.p`
+    font-size: 14px;
+    font-weight: bold;
+    color: ${(props) => (props.children === "open" ? "#51af67fa" : "red")};
+  `,
+};

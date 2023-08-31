@@ -1,8 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 const useInfiniteScroll = (callback, options) => {
   const lastItemRef = useRef(null);
+  //callback 함수 메모이징
   const memoCallback = useCallback(callback, []);
+
   useEffect(() => {
     //   //현재의 라스트 Item의 상태를 저장
     //   //해당 아이템 관측시작 가시성 90%

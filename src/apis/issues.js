@@ -29,17 +29,27 @@ export const getIssues = async (
   }
 };
 
+// export const getIssuesDetail2 = async (dispatch, targetId) => {
+//   try {
+//     console.log('동작')
+//     dispatch({
+//       type: IssueAction.ISSUE_LIST_REQUEST,
+//     });
+//     const response = await API(`${ISSUES}/${targetId}`);
+//     if (response) {
+//       dispatch({
+//         type: IssueAction.ISSUE_DETAIL_SUCCESS,
+//         data: response.data,
+//       });
+//     }
+//   } catch (error) {
+//     dispatch({
+//       type: IssueAction.ISSUE_LIST_FAILURE,
+//       data: error,
+//     });
+//   }
+// };
+
 export const getIssuesDetail = (targetId) => {
   return API(`${ISSUES}/${targetId}`);
 };
-
-// export const getIssuesDetail = async (dispatch) => {
-//   try {
-//     const response = await  API(`${ISSUES}/${targetId}`)
-//     if (response) {
-
-//     }
-//   } catch (error) {
-
-//   }
-// };

@@ -7,6 +7,9 @@ import {
   IssueStateContext,
 } from "../../context/IssuesContext";
 import useInfiniteScroll from "../../hooks/useInfiniteScroll";
+import Spinner from "../Spinner";
+import ErrorScreen from "../ErrorScreen";
+import { styled } from "styled-components";
 
 const IssuesList = () => {
   const { issueList, isError, isLoading } = useContext(IssueStateContext);
@@ -33,16 +36,23 @@ const IssuesList = () => {
   );
 
   if (isError) {
-    return <p>에러확인</p>;
+    throw new Error(isError);
   }
 
   return (
-    <div>
+    <IssueListWrapper>
       <h2>이슈 페이지</h2>
       <div>{issueList.map(renderIssue)}</div>
-      {isLoading && <p> 로딩중 ...</p>}
-    </div>
+      {isLoading && <Spinner />}
+    </IssueListWrapper>
   );
 };
 
 export default IssuesList;
+
+const IssueListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+`;
