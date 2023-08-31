@@ -5,12 +5,13 @@ const AdvertisementWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 70px;
   cursor: pointer;
 `;
 
 const AdvertisementImage = styled.img`
   width: 110px;
-  margin: 0 5px; // 이미지 사이의 간격을 위해 추가
+  margin: 0 5px;
 `;
 
 const Advertisement = () => {
